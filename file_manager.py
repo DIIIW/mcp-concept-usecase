@@ -2,7 +2,7 @@ import json
 import shutil
 from pathlib import Path
 
-PATH_START = "D:/MCP/asset/"  
+PATH_START = "./asset/"  
 
 def get_folder_file_structure(directory_path=PATH_START):
     """
@@ -18,6 +18,7 @@ def get_folder_file_structure(directory_path=PATH_START):
 
     for path in directory_path.rglob("*"):
         rel_path = path.relative_to(directory_path).as_posix()
+        print(f"rel_path : {rel_path}")
         if path.is_dir():
             folders.append(rel_path + "/")
         else:

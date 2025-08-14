@@ -4,7 +4,8 @@ load_dotenv()
 import httpx
 
 AITABLE_KEY = os.getenv("AITABLE_KEY")
-BASE_URL = "https://aitable.ai/fusion/v1/datasheets/dstu7MRYThBwdgYp7p"
+DATASHEETS_ID = os.getenv("datasheets_id")
+BASE_URL = f"https://aitable.ai/fusion/v1/datasheets/{DATASHEETS_ID}"
 headers  = {'Authorization': AITABLE_KEY}
 
 def get_aitable_record(maxRecords:int):
